@@ -44,13 +44,13 @@ module.exports = {
 
   // delete a thought by id
   deleteThought: (req, res) => {
-    Thought.deleteOne(
+    Thought.findOneAndDelete(
       { _id: req.params.thoughtId }
     )
     .then((thought) => {
       return User.findOneAndUpdate(
         { username: thought.username},
-        { $pull: { thoughts: thought._id } },
+        { $pull: { thoughts: req.params.thoughtId } },
         { new: true }
       );
     }).then(user => {
