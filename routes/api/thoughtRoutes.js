@@ -3,7 +3,7 @@ const {
   getThoughts,
   getSingleThought,
   createThought,
-} = require("../../controllers/userController");
+} = require("../../controllers/thoughtController");
 
 
 // /api/thoughts
