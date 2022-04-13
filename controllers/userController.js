@@ -34,12 +34,13 @@ module.exports = {
 
   // delete a user by id
   deleteUser: (req, res) => {
-    User.findOneAndDelete({"_id": req.params.userId})
+    User.findOneAndDelete({_id: req.params.userId})
     .then(user => {
       return Thought.deleteMany({ username: user.username})
     })
     .then(deleted => {
-      deleted.deletedCount
+      console.log(deleted);
+      deleted.deletedCount <= 0
         ? res.json(`deleted user and ${deleted.deletedCount} thoughts`)
         : res.json('error when deleting user thoughts');
     })
