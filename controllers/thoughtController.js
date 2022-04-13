@@ -1,5 +1,7 @@
 module.exports = {
   getThoughts: () => {},
   getSingleThought: () => {},
-  createThought: () => {}
+  createThought: () => {},
+  updateThought: () => {},
+  deleteThought: () => {}
 }
