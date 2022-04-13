@@ -13,7 +13,7 @@ module.exports = {
       { $addToSet: { friends: friend } },
       { new: true }
     )
-    .then(newUser => res.json(newUser))
+    .then(user => res.json(user))
     .catch((err) => res.status(500).json(err));
   },
 
