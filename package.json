@@ -1,14 +1,15 @@
 {
   "name": "week-18",
   "version": "1.0.0",
-  "description": "",
+  "description": "A social media backend with mongoDB and express",
   "main": "index.js",
   "scripts": {
+    "watch": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Matthew Durflinger",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.3",
     "mongoose": "^6.2.10",
