@@ -42,11 +42,6 @@ userSchema
     return this.friends.length;
   });
 
-// remove thoughts on user delete
-
-// userSchema.pre('deleteOne', { document: true, query: false }, function() {
-  
-// });
 
 // create model
 const User = model('user', userSchema);

@@ -27,7 +27,7 @@ module.exports = {
 
   // update a user by id
   updateUser: (req, res) => {
-    User.updateOne({"_id": req.params.userId}, {...req.body})
+    User.findOneAndUpdate({"_id": req.params.userId}, {...req.body}, { new:true })
     .then(user => res.json(user))
     .catch((err) => res.status(500).json(err));
   },
@@ -39,7 +39,6 @@ module.exports = {
       return Thought.deleteMany({ username: user.username})
     })
     .then(deleted => {
-      console.log(deleted);
       deleted.deletedCount <= 0
         ? res.json(`deleted user and ${deleted.deletedCount} thoughts`)
         : res.json('error when deleting user thoughts');
