@@ -4,9 +4,7 @@ module.exports = {
   // add a friend
   addFriend: async (req, res) => {
     const user = req.params.userId;
-    console.log(user);
     const friend = req.params.friendId;
-    console.log(friend);
 
     User.findOneAndUpdate(
       { _id: user },

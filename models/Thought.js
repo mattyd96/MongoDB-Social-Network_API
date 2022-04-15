@@ -15,7 +15,7 @@ const thoughtSchema = new Schema({
   createdAt: {type: Date, default: Date.now, get: formatDate},
   username: {type: String, required: true},
   reactions: [reactionSchema]
-}, {toJSON: {getters: true}});
+}, {toJSON: {getters: true, virtuals: true}, id: false});
 
 // virtual for getting friend count -> friendCount
 thoughtSchema
